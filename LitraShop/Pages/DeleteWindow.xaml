@@ -1,0 +1,47 @@
+﻿<Window x:Class="LitraShop.Pages.DeleteWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LitraShop.Pages"
+        mc:Ignorable="d"
+        Title="DeleteWindow" MinHeight="250" MinWidth="500"  MaxHeight="300" MaxWidth="500">
+    <Grid Background="#61D7A4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Вы действительно хотите удалить?"
+                   Grid.Row="0"
+                   Grid.Column="0" Grid.ColumnSpan="4"
+                   VerticalAlignment="Bottom"
+                   FontSize="20"
+                   Margin="10"/>
+        <Button x:Name="BtnYes" 
+                Content="Да"
+                Grid.Column="0"
+                Grid.Row="2"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                FontSize="20"
+                Background="#FF9200"
+                BorderBrush="Black" Margin="0,0,103,16" Width="82" Grid.ColumnSpan="2" Click="BtnYesClick"/>
+        <Button x:Name="BtnNo" 
+                Content="Нет"
+                Grid.Column="1"
+                Grid.Row="1"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                FontSize="20"
+                Background="#FF9200"
+                BorderBrush="Black" Margin="0,0,10,16" Width="82" Click="BtnNoClick"/>
+
+    </Grid>
+</Window>

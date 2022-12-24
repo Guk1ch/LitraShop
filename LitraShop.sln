@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LitraShop", "LitraShop\LitraShop.csproj", "{56EDF0F7-65D9-430F-8036-D7669D10718D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{5F72444C-BC01-407B-9417-694B7E310339}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{56EDF0F7-65D9-430F-8036-D7669D10718D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56EDF0F7-65D9-430F-8036-D7669D10718D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56EDF0F7-65D9-430F-8036-D7669D10718D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F72444C-BC01-407B-9417-694B7E310339}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F72444C-BC01-407B-9417-694B7E310339}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F72444C-BC01-407B-9417-694B7E310339}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F72444C-BC01-407B-9417-694B7E310339}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

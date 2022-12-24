@@ -10,21 +10,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using LitraShop.Pages;
 
-namespace LitraShop
+namespace LitraShop.Pages
 {
 	/// <summary>
-	/// Interaction logic for MainWindow.xaml
+	/// Interaction logic for DeleteWindow.xaml
 	/// </summary>
-	public partial class MainWindow : Window
+	public partial class DeleteWindow : Window
 	{
-		public MainWindow()
+		public DeleteWindow()
 		{
 			InitializeComponent();
-			MainFrame.NavigationService.Navigate(new AuthorisPage());
+		}
+		private void BtnYesClick(object sender, RoutedEventArgs e)
+		{
+			this.DialogResult = true;
+		}
+
+		private void BtnNoClick(object sender, RoutedEventArgs e)
+		{
+			this.DialogResult = false;
 		}
 	}
 }

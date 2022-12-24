@@ -8,7 +8,94 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AuthorisPage">
 
-    <Grid>
-        
+    <Grid Background="#61D7A4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.RowSpan="2"
+                    Grid.Column="0" Grid.ColumnSpan="4" 
+                    Background="#00AF64" Margin="0, 0, 0, 40"/>
+        <TextBlock Text="ЛитраШоп" 
+                   Grid.Row="0" 
+                   Grid.Column="0" Grid.ColumnSpan="4" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   FontSize="50" FontWeight="Bold"/>
+        <TextBlock Text="Рады вас видеть!"
+                   Grid.Row="1"
+                   Grid.Column="0" Grid.ColumnSpan="4"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="30" FontWeight="Bold"
+                   Grid.RowSpan="2"/>
+        <TextBox x:Name="TbLogin"
+                 Grid.Row="3"
+                 Grid.Column="1" Grid.ColumnSpan="2"
+                 VerticalAlignment="Bottom"
+                 Height="31"
+                 FontSize="20" />
+        <TextBlock Text="Логин"
+                   FontWeight="DemiBold"
+                   Grid.Row="3"
+                   Grid.Column="1" Grid.ColumnSpan="2"
+                   VerticalAlignment="Top"
+                   FontSize="19" />
+        <PasswordBox x:Name="TbPassword"
+                 Grid.Row="4"
+                 Grid.Column="1" Grid.ColumnSpan="2"
+                 VerticalAlignment="Bottom"
+                 Height="31"
+                 FontSize="20" />
+        <TextBlock Text="Пароль"
+                   FontWeight="DemiBold"
+                   Grid.Row="4"
+                   Grid.Column="1" Grid.ColumnSpan="2"
+                   VerticalAlignment="Top"
+                   FontSize="19" />
+        <Button x:Name="BtnAuthoriz"
+                Content="Войти"
+                Grid.Row="5"
+                Grid.Column="1" Grid.ColumnSpan="2"
+                Background="#FF9200"
+                Height="30"
+                VerticalAlignment="Top"
+                FontSize="15" FontWeight="Bold"
+                Click="BtnAuthorizClick" Grid.RowSpan="2"/>
+        <TextBlock x:Name="TbRegist"
+                   Text="Нет аккаунта? Самое время его завести!"
+                   Grid.Row="6"
+                   Grid.Column="0" Grid.ColumnSpan="4"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Center"
+                   FontSize="14"
+                   Foreground="Black"
+                   MouseDown="TextBlockMouseDown"
+                   MouseEnter="TextBlockMouseEnter"
+                   MouseLeave="TextBlockMouseLeave" 
+                    Width="285"/>
+        <CheckBox x:Name="CbSaveLogin"
+                  Content="Запомнить аккаунт?"
+                  IsChecked="True"
+                  Grid.Row="7"
+                  Grid.Column="1" Grid.ColumnSpan="2"
+                  VerticalAlignment="Top"
+                  HorizontalAlignment="Center"
+                  FontSize="14"
+                  Foreground="Black" 
+                  Width="175"/>
+
     </Grid>
 </Page>

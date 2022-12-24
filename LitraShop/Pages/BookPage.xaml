@@ -8,7 +8,115 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="BookPage">
 
-    <Grid>
-        
+    <Grid  Background="#61D7A4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.RowSpan="2"
+                    Grid.Column="0" Grid.ColumnSpan="13"
+                    Margin="0, 0, 0, 20"
+                    Background="#00AF64"/>
+        <TextBlock Text="{Binding bookToFill.Name}" 
+                   Grid.Row="0" Grid.RowSpan="1"
+                   Grid.Column="0" Grid.ColumnSpan="12" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Margin="0, 5, 0, 0"
+                   FontSize="25" FontWeight="Bold"/>
+        <TextBlock x:Name="TbBack"
+                   Text="←"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   FontWeight="Bold" FontSize="35"
+                   Margin="10,-5,0,3"
+                   MouseDown="TbBackMouseDown"
+                   MouseEnter="TbBackMouseEnter"
+                   MouseLeave="TbBackMouseLeave"/>
+
+        <Image x:Name="ImgPoster"
+               Source="{Binding bookToFill.Poster}"
+               Grid.Column="1" Grid.ColumnSpan="3"
+               Grid.Row="2" Grid.RowSpan="8"/>
+        <TextBlock Text="Дата выхода: "
+                   Grid.Column="5" Grid.ColumnSpan="3"
+                   Grid.Row="2"
+                   FontSize="20"/>
+        <TextBlock Text="Продолжительность: "
+                   Grid.Column="5" Grid.ColumnSpan="3"
+                   Grid.Row="3"
+                   FontSize="20"/>
+        <TextBlock Text="Описание: "
+                   Grid.Column="5" Grid.ColumnSpan="3"
+                   Grid.Row="5"
+                   FontSize="20"/>
+        <TextBlock x:Name="tb_link"
+                   Grid.Column="5" Grid.ColumnSpan="3"
+                   Grid.Row="4"
+                   FontSize="20">
+            <Hyperlink
+                CommandParameter="{Binding ExternalURL}"
+                Command="{Binding NavHomeViewCommand}">Читать</Hyperlink>
+        </TextBlock>
+
+        <ScrollViewer Grid.Column="5" Grid.ColumnSpan="6"
+                   Grid.Row="6" Grid.RowSpan="5">
+            <TextBlock Text="{Binding bookToFill.Description}"
+                   Grid.Column="5" Grid.ColumnSpan="6"
+                   Grid.Row="6" Grid.RowSpan="5"
+                   FontSize="16"
+                   TextWrapping="Wrap" />
+        </ScrollViewer>
+        <TextBlock Text="{Binding bookToFill.Date_Issue, StringFormat=yyyy}"
+                   Grid.Column="8" Grid.ColumnSpan="3"
+                   Grid.Row="2"
+                   FontSize="20"/>
+        <TextBlock x:Name="TbDuration"
+                   Text="{Binding bookToFill.Duration}"
+                   Grid.Column="8" Grid.ColumnSpan="3"
+                   Grid.Row="3"
+                   FontSize="20"/>
+        <Image x:Name="ImgPlus" 
+               Source="../img/plus2.png"
+               Grid.Column="12"
+               Grid.Row="1"
+               Width="27"
+               HorizontalAlignment="Right"
+               Margin="0,20,10,20"
+               MouseDown="ImgPlusMouseDown" Grid.RowSpan="2"/>
+        <CheckBox x:Name="CbWatch"
+                  Content="Прочитано"
+                  Grid.Column="5" Grid.ColumnSpan="3"
+                  Grid.Row="11"
+                  FontSize="20" 
+                  Checked="CbWatchChecked"
+                  Unchecked="CbWatchUnchecked"/>
+
     </Grid>
 </Page>

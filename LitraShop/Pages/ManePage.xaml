@@ -8,7 +8,94 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ManePage">
 
-    <Grid>
-        
+    <Grid  Background="#61D7A4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0"
+                    Grid.Column="0" Grid.ColumnSpan="13" 
+                    Background="#00AF64"/>
+        <TextBlock Text="ЛитраШоп" 
+                   Grid.Row="0"
+                   Grid.Column="0" Grid.ColumnSpan="12" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   FontSize="30" FontWeight="Bold"/>
+        <TextBlock Text="Поиск: "
+                   Grid.Row="1"
+                   Grid.Column="3" Grid.ColumnSpan="2"
+                   FontSize="20"
+                   HorizontalAlignment="Right"
+                   FontWeight="Medium"/>
+        <TextBox x:Name="TbSearch"
+                 Grid.Row="1"
+                 Grid.Column="5" Grid.ColumnSpan="4"
+                 FontSize="20"
+                 SelectionChanged="TbSearchSelectionChanged"/>
+        <TextBlock x:Name="TbIsEmpty"
+                   Text="По запросу ничего не найдено"
+                   Grid.Row="6"
+                   Grid.Column="4" Grid.ColumnSpan="5"
+                   FontSize="20"
+                   Visibility="Hidden"/>
+        <ListView x:Name="LvBooks" 
+                  ItemsSource="{Binding bookList}" 
+                  Grid.Row="2" Grid.RowSpan="12"
+                  Grid.Column="0" Grid.ColumnSpan="13"
+                  Background="#61D7A4"
+                  SelectionChanged="LvBooksSelectionChanged">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="2"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="300">
+                        <Image Source="{Binding Poster}" Width="300" Height="300"/>
+                        <TextBlock Text="{Binding Name}" 
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="20" 
+                                       Foreground="Black"
+                                       
+                                       TextWrapping="Wrap"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="BtnProfil" 
+                Content="Профиль"
+                Grid.Column="11"
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                Background="#FF9200"
+                Click="BtnProfilClick"/>
     </Grid>
 </Page>

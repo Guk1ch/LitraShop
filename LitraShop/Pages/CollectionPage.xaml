@@ -1,0 +1,119 @@
+﻿<Page x:Class="LitraShop.Pages.CollectionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LitraShop.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CollectionPage">
+
+    <Grid  Background="#61D7A4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    Grid.Column="0" Grid.ColumnSpan="13" 
+                    Background="#00AF64"/>
+        <TextBlock Text="{Binding updateCollection.Name}" 
+                   Grid.Row="0"
+                   Grid.Column="0" Grid.ColumnSpan="12" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   FontSize="20" FontWeight="Bold"/>
+        <TextBlock x:Name="TbBack"
+                   Text="←"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   FontWeight="Bold" FontSize="30"
+                   Margin="10,-7,0,7"
+                   MouseDown="TbBackMouseDown"
+                   MouseEnter="TbBackMouseEnter"
+                   MouseLeave="TbBackMouseLeave"/>
+        <TextBlock x:Name="TbIsEmpty"
+                   Text="Коллекция пустая"
+                   Grid.Row="6"
+                   Grid.Column="4" Grid.ColumnSpan="5"
+                   FontSize="20"
+                   HorizontalAlignment="Center"
+                   Visibility="Hidden"/>
+
+        <ListView x:Name="LvBook"
+                  ItemsSource="{Binding booksToFill}"
+                  Grid.Row="2" Grid.RowSpan="10"
+                  Grid.Column="2" Grid.ColumnSpan="9"
+                   Background="#61D7A4"
+                  SelectionChanged="LvBookSelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding Book.Poster}" Width="100"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn DisplayMemberBinding="{Binding Book.Name}"/>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="BtnDel"
+                                        Content="Удалить"
+                                        Background="#FF9200"
+                                        BorderBrush="Black"
+                                        Click="BtnDelClick"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Image x:Name="ImgRedaction" 
+               Source="../img/red.png"
+               Grid.Column="12"
+               Grid.Row="1"
+               Width="27"
+               HorizontalAlignment="Right"
+               Margin="0,5,11,0"
+               MouseDown="ImgRedactionMouseDown"/>
+        <Image x:Name="ImgDelete" 
+               Source="../img/del.png"
+               Grid.Column="11"
+               Grid.Row="1"
+               Width="27"
+               HorizontalAlignment="Right"
+               Margin="0,5,52,0"
+               MouseDown="ImgDeleteMouseDown" 
+               Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Page>
