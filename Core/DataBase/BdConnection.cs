@@ -8,6 +8,6 @@ namespace Core.DataBase
 {
 	public class BdConnection
 	{
-		public static LitraShopEntities1 connection = new LitraShopEntities1();
+		public static ComicsViwerEntities connection = new ComicsViwerEntities();
 	}
 }

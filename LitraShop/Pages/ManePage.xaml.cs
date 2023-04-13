@@ -24,7 +24,7 @@ namespace LitraShop.Pages
 	public partial class ManePage : Page
 	{
 		public static User profil { get; set; }
-		public static ObservableCollection<Book> bookList { get; set; }
+		public static ObservableCollection<Comics> bookList { get; set; }
 		public ManePage(User user)
 		{
 			InitializeComponent();
@@ -38,7 +38,7 @@ namespace LitraShop.Pages
 		}
 		private void LvBooksSelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
-			var isSelected = LvBooks.SelectedItem as Book;
+			var isSelected = LvBooks.SelectedItem as Comics;
 			if (isSelected != null)
 			{
 				NavigationService.Navigate(new BookPage(isSelected));
@@ -49,7 +49,7 @@ namespace LitraShop.Pages
 			bookList = BookFunction.GetBook();
 			if (TbSearch.Text != "")
 			{
-				bookList = new ObservableCollection<Book>(BdConnection.connection.Book.Where(a => a.Name.Contains(TbSearch.Text)).ToList());
+				bookList = new ObservableCollection<Comics>(BdConnection.connection.Comics.Where(a => a.Name.Contains(TbSearch.Text)).ToList());
 			}
 
 			if (bookList.Count == 0)

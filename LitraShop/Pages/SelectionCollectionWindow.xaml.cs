@@ -43,14 +43,14 @@ namespace LitraShop.Pages
 		{
 			if (CbCollection.SelectedIndex >= 0)
 			{
-				var BookColl = new Book_Collection();
+				var BookColl = new Comics_Collection();
 				var select = CbCollection.SelectedItem as Collection;
 				BookColl.ID_Collection = select.ID;
-				BookColl.ID_Book = BookId;
-				var isColl = BdConnection.connection.Book_Collection.Where(a => a.ID_Collection == select.ID && a.ID_Book == BookId).Count();
+				BookColl.ID_Comics = BookId;
+				var isColl = BdConnection.connection.Comics_Collection.Where(a => a.ID_Collection == select.ID && a.ID_Comics == BookId).Count();
 				if (isColl == 0)
 				{
-					BdConnection.connection.Book_Collection.Add(BookColl);
+					BdConnection.connection.Comics_Collection.Add(BookColl);
 					BdConnection.connection.SaveChanges();
 					this.DialogResult = true;
 				}

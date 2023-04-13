@@ -12,13 +12,13 @@ namespace Core.DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Book_Collection
+    public partial class Comics_Collection
     {
         public int ID { get; set; }
-        public Nullable<int> ID_Book { get; set; }
+        public Nullable<int> ID_Comics { get; set; }
         public Nullable<int> ID_Collection { get; set; }
     
-        public virtual Book Book { get; set; }
         public virtual Collection Collection { get; set; }
+        public virtual Comics Comics { get; set; }
     }
 }

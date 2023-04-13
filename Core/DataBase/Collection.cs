@@ -17,17 +17,16 @@ namespace Core.DataBase
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Collection()
         {
-            this.Book_Collection = new HashSet<Book_Collection>();
+            this.Comics_Collection = new HashSet<Comics_Collection>();
         }
     
         public int ID { get; set; }
         public string Name { get; set; }
         public Nullable<int> ID_User { get; set; }
         public Nullable<bool> IsDelete { get; set; }
-        public Nullable<bool> Inkognito { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Book_Collection> Book_Collection { get; set; }
         public virtual User User { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Comics_Collection> Comics_Collection { get; set; }
     }
 }

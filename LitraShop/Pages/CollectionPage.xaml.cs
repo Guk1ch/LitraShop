@@ -23,7 +23,7 @@ namespace LitraShop.Pages
 	/// </summary>
 	public partial class CollectionPage : Page
 	{
-		public static ObservableCollection<Book_Collection> booksToFill { get; set; }
+		public static ObservableCollection<Comics_Collection> booksToFill { get; set; }
 		public int IDCollection;
 		public Collection updateCollection { get; set; }
 		public CollectionPage(Collection collection)
@@ -70,7 +70,7 @@ namespace LitraShop.Pages
 
         private void LvBookSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Book selected = (LvBook.SelectedItem as Book_Collection).Book;
+            Comics selected = (LvBook.SelectedItem as Comics_Collection).Comics;
             NavigationService.Navigate(new BookPage(selected));
         }
 
@@ -87,12 +87,12 @@ namespace LitraShop.Pages
         private void BtnDelClick(object sender, RoutedEventArgs e)
         {
             var senderButton = sender as Button;
-            var book = senderButton.DataContext as Book_Collection;
+            var book = senderButton.DataContext as Comics_Collection;
             Collection delBookColl = BdConnection.connection.Collection.Where(a => a.ID == book.ID_Collection).FirstOrDefault();
 
             if (delBookColl.Name != "Прочитано")
             {
-                CollectionFunction.DeletedFilmInCollection(IDCollection, Convert.ToInt32(book.ID_Book));
+                CollectionFunction.DeletedFilmInCollection(IDCollection, Convert.ToInt32(book.ID_Comics));
                 UpdateFilm();
             }
             else

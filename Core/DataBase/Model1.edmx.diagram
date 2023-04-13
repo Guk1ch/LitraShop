@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d65f6bd2d2544b32bf69a450cbfb2dfc" Name="Diagram1">
-        <EntityTypeShape EntityType="LitraShopModel.Book" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="LitraShopModel.Book_Collection" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="LitraShopModel.Collection" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="LitraShopModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LitraShopModel.User" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="LitraShopModel.FK_Book_Collection_Book" ManuallyRouted="false" />
-        <AssociationConnector Association="LitraShopModel.FK_Book_Collection_Collection" ManuallyRouted="false" />
-        <AssociationConnector Association="LitraShopModel.FK_Collection_User" ManuallyRouted="false" />
+      <Diagram DiagramId="a4cdb88d2a6a4de3bba45b4166fdf7ff" Name="Diagram1">
+        <EntityTypeShape EntityType="ComicsViwerModel.Collection" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComicsViwerModel.Comics" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComicsViwerModel.Comics_Collection" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComicsViwerModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ComicsViwerModel.User" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="ComicsViwerModel.FK_Collection_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ComicsViwerModel.FK_Comics_Collection_Collection" ManuallyRouted="false" />
+        <AssociationConnector Association="ComicsViwerModel.FK_Comics_Collection_Comics" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

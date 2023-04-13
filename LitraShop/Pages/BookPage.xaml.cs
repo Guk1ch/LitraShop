@@ -23,19 +23,19 @@ namespace LitraShop.Pages
 	/// </summary>
 	public partial class BookPage : Page
 	{
-		public Book bookToFill { get; set; }
+		public Comics bookToFill { get; set; }
 		private void NavHomeView(object ID)
 		{
 			if (ID is string destinationurl)
-				System.Diagnostics.Process.Start(bookToFill.BookLink);
+				System.Diagnostics.Process.Start(bookToFill.ComicsLink);
 		}
-		public string ExternalURL { get => bookToFill.BookLink; }
+		public string ExternalURL { get => bookToFill.ComicsLink; }
 		private readonly ICommand navHomeViewCommand;
 		public ICommand NavHomeViewCommand
 		{
 			get { return navHomeViewCommand; }
 		}
-		public BookPage(Book book)
+		public BookPage(Comics book)
 		{
 			InitializeComponent();
 			bookToFill = book;

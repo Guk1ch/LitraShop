@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="BookPage">
 
-    <Grid  Background="#61D7A4">
+    <Grid  Background="#FF7673">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -43,7 +43,7 @@
         <StackPanel Grid.Row="0" Grid.RowSpan="2"
                     Grid.Column="0" Grid.ColumnSpan="13"
                     Margin="0, 0, 0, 20"
-                    Background="#00AF64"/>
+                    Background="#34C6CD"/>
         <TextBlock Text="{Binding bookToFill.Name}" 
                    Grid.Row="0" Grid.RowSpan="1"
                    Grid.Column="0" Grid.ColumnSpan="12" 

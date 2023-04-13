@@ -12,12 +12,12 @@ namespace Core.DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Book
+    public partial class Comics
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Book()
+        public Comics()
         {
-            this.Book_Collection = new HashSet<Book_Collection>();
+            this.Comics_Collection = new HashSet<Comics_Collection>();
         }
     
         public int ID { get; set; }
@@ -26,9 +26,9 @@ namespace Core.DataBase
         public byte[] Poster { get; set; }
         public Nullable<System.DateTime> Date_Issue { get; set; }
         public Nullable<int> CountList { get; set; }
-        public string BookLink { get; set; }
+        public string ComicsLink { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Book_Collection> Book_Collection { get; set; }
+        public virtual ICollection<Comics_Collection> Comics_Collection { get; set; }
     }
 }

@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="RegPage">
 
-    <Grid  Background="#61D7A4">
+    <Grid  Background="#FF7673">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -28,8 +28,8 @@
 
         <StackPanel Grid.Row="0" Grid.RowSpan="2"
                     Grid.Column="0" Grid.ColumnSpan="4" 
-                    Background="#00AF64" Margin="0, 0, 0, 40"/>
-        <TextBlock Text="ЛитраШоп" 
+                    Background="#34C6CD" Margin="0, 0, 0, 40"/>
+        <TextBlock Text="КомиксВьювер" 
                    Grid.Row="0" 
                    Grid.Column="0" Grid.ColumnSpan="4" 
                    HorizontalAlignment="Center" VerticalAlignment="Center" 
@@ -100,7 +100,7 @@
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Center"
                 Width="200"
-                Background="#FF9200"
+                Background="#659A00"
                 FontWeight="Bold"
                 Foreground="Black"
                 Click="BtnNewPhotoClick"/>
@@ -113,7 +113,7 @@
                 VerticalAlignment="Bottom"
                 Width="350"
                 Margin="0, 0, 0, 10"
-                Background="#FF9200"
+                Background="#659A00"
                 FontWeight="Bold"
                 Foreground="Black"
                 Click="BtnSaveClick"/>

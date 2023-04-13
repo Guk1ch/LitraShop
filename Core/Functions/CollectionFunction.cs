@@ -11,16 +11,16 @@ namespace Core.Functions
 	public class CollectionFunction
 	{
 		public static ObservableCollection<Collection> collections { get; set; }
-		public static ObservableCollection<Book_Collection> books { get; set; }
+		public static ObservableCollection<Comics_Collection> books { get; set; }
 		public static Collection collectionForDelete { get; set; }
-		public static Book_Collection Book_CollectionForDelete { get; set; }
+		public static Comics_Collection Book_CollectionForDelete { get; set; }
 		public static ObservableCollection<Collection> GetCollection(int idUser)
 		{
 			return collections = new ObservableCollection<Collection>((BdConnection.connection.Collection.Where(userCollectiom => userCollectiom.ID_User == idUser && userCollectiom.IsDelete != true)).ToList());
 		}
-		public static ObservableCollection<Book_Collection> GetBookInCollection(int idColl)
+		public static ObservableCollection<Comics_Collection> GetBookInCollection(int idColl)
 		{
-			return books = new ObservableCollection<Book_Collection>((BdConnection.connection.Book_Collection.Where(a => a.ID_Collection == idColl)).ToList());
+			return books = new ObservableCollection<Comics_Collection>((BdConnection.connection.Comics_Collection.Where(a => a.ID_Collection == idColl)).ToList());
 		}
 		public static bool NewCollection(string nameCollection, int userID)
 		{
@@ -59,7 +59,7 @@ namespace Core.Functions
 		}
 		public static void ReadedBook(int idUser, int idBook)
 		{
-			var BookColl = new Book_Collection();
+			var BookColl = new Comics_Collection();
 			var allColl = CollectionFunction.GetCollection(idUser);
 			int viewedCollection = 0;
 			foreach (var i in allColl)
@@ -70,17 +70,17 @@ namespace Core.Functions
 				}
 			}
 			BookColl.ID_Collection = viewedCollection;
-			BookColl.ID_Book = idBook;
-			Book_Collection UnigueBookCollection = BdConnection.connection.Book_Collection.Where(a => a.ID_Collection == BookColl.ID_Collection && a.ID_Book == BookColl.ID_Book).FirstOrDefault();
+			BookColl.ID_Comics = idBook;
+			Comics_Collection UnigueBookCollection = BdConnection.connection.Comics_Collection.Where(a => a.ID_Collection == BookColl.ID_Collection && a.ID_Comics == BookColl.ID_Comics).FirstOrDefault();
 			if (UnigueBookCollection == null)
 			{
-				BdConnection.connection.Book_Collection.Add(BookColl);
+				BdConnection.connection.Comics_Collection.Add(BookColl);
 				BdConnection.connection.SaveChanges();
 			}
 		}
 		public static void UnviewedBook(int idUser, int idBook)
 		{
-			var BookColl = new Book_Collection();
+			var BookColl = new Comics_Collection();
 			var allColl = CollectionFunction.GetCollection(idUser);
 			int viewedCollection = 0;
 			foreach (var i in allColl)
@@ -91,14 +91,14 @@ namespace Core.Functions
 				}
 			}
 			BookColl.ID_Collection = viewedCollection;
-			BookColl.ID_Book = idBook;
-			Book_Collection DeletedFilmCollection = BdConnection.connection.Book_Collection.Where(a => a.ID_Collection == BookColl.ID_Collection && a.ID_Book == BookColl.ID_Book).FirstOrDefault();
-			BdConnection.connection.Book_Collection.Remove(DeletedFilmCollection);
+			BookColl.ID_Comics = idBook;
+			Comics_Collection DeletedFilmCollection = BdConnection.connection.Comics_Collection.Where(a => a.ID_Collection == BookColl.ID_Collection && a.ID_Comics == BookColl.ID_Comics).FirstOrDefault();
+			BdConnection.connection.Comics_Collection.Remove(DeletedFilmCollection);
 			BdConnection.connection.SaveChanges();
 		}
 		public static bool Viewed(int idUser, int idBook)
 		{
-			var BookColl = new Book_Collection();
+			var BookColl = new Comics_Collection();
 			var allColl = CollectionFunction.GetCollection(idUser);
 			int viewedCollection = 0;
 			foreach (var i in allColl)
@@ -109,8 +109,8 @@ namespace Core.Functions
 				}
 			}
 			BookColl.ID_Collection = viewedCollection;
-			BookColl.ID_Book = idBook;
-			Book_Collection DeletedFilmCollection = BdConnection.connection.Book_Collection.Where(a => a.ID_Collection == BookColl.ID_Collection && a.ID_Book == BookColl.ID_Book).FirstOrDefault();
+			BookColl.ID_Comics = idBook;
+			Comics_Collection DeletedFilmCollection = BdConnection.connection.Comics_Collection.Where(a => a.ID_Collection == BookColl.ID_Collection && a.ID_Comics == BookColl.ID_Comics).FirstOrDefault();
 			if (DeletedFilmCollection != null)
 			{
 				return true;
@@ -129,8 +129,8 @@ namespace Core.Functions
 		}
 		public static void DeletedFilmInCollection(int IDColl, int IDBook)
 		{
-			Book_CollectionForDelete = BdConnection.connection.Book_Collection.Where(a => a.ID_Collection == IDColl && a.ID_Book == IDBook).FirstOrDefault();
-			BdConnection.connection.Book_Collection.Remove(Book_CollectionForDelete);
+			Book_CollectionForDelete = BdConnection.connection.Comics_Collection.Where(a => a.ID_Collection == IDColl && a.ID_Comics == IDBook).FirstOrDefault();
+			BdConnection.connection.Comics_Collection.Remove(Book_CollectionForDelete);
 			BdConnection.connection.SaveChanges();
 		}
 	}

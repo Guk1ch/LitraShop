@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CollectionPage">
 
-    <Grid  Background="#61D7A4">
+    <Grid  Background="#FF7673">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -42,7 +42,7 @@
 
         <StackPanel Grid.Row="0"
                     Grid.Column="0" Grid.ColumnSpan="13" 
-                    Background="#00AF64"/>
+                    Background="#34C6CD"/>
         <TextBlock Text="{Binding updateCollection.Name}" 
                    Grid.Row="0"
                    Grid.Column="0" Grid.ColumnSpan="12" 
@@ -69,7 +69,7 @@
                   ItemsSource="{Binding booksToFill}"
                   Grid.Row="2" Grid.RowSpan="10"
                   Grid.Column="2" Grid.ColumnSpan="9"
-                   Background="#61D7A4"
+                   Background="#FF7673"
                   SelectionChanged="LvBookSelectionChanged">
             <ListView.View>
                 <GridView>
@@ -87,7 +87,7 @@
                             <DataTemplate>
                                 <Button x:Name="BtnDel"
                                         Content="Удалить"
-                                        Background="#FF9200"
+                                        Background="#659A00"
                                         BorderBrush="Black"
                                         Click="BtnDelClick"/>
                             </DataTemplate>

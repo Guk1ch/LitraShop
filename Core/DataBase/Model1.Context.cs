@@ -13,10 +13,10 @@ namespace Core.DataBase
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class LitraShopEntities1 : DbContext
+    public partial class ComicsViwerEntities : DbContext
     {
-        public LitraShopEntities1()
-            : base("name=LitraShopEntities1")
+        public ComicsViwerEntities()
+            : base("name=ComicsViwerEntities")
         {
         }
     
@@ -25,9 +25,9 @@ namespace Core.DataBase
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Book> Book { get; set; }
-        public virtual DbSet<Book_Collection> Book_Collection { get; set; }
         public virtual DbSet<Collection> Collection { get; set; }
+        public virtual DbSet<Comics> Comics { get; set; }
+        public virtual DbSet<Comics_Collection> Comics_Collection { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User> User { get; set; }
     }

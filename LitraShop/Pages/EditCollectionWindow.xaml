@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:LitraShop.Pages"
         mc:Ignorable="d"
         Title="EditCollectionWindow" MinHeight="250" MinWidth="500" MaxHeight="400" MaxWidth="700">
-    <Grid Background="#61D7A4">
+    <Grid Background="#FF7673">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -37,6 +37,6 @@
                 Width="100"
                 HorizontalAlignment="Right"
                 Margin="0,0,10,10"
-                Background="#FF9200" Click="BtnSaveClick" RenderTransformOrigin="0.251,0.555"/>
+                Background="#659A00" Click="BtnSaveClick" RenderTransformOrigin="0.251,0.555"/>
     </Grid>
 </Window>

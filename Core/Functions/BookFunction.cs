@@ -10,15 +10,15 @@ namespace Core.Functions
 {
 	public class BookFunction
 	{
-        public static ObservableCollection<Book> books { get; set; }
-        public static ObservableCollection<Book> GetBook()
+        public static ObservableCollection<Comics> books { get; set; }
+        public static ObservableCollection<Comics> GetBook()
         {
-            return new ObservableCollection<Book>(BdConnection.connection.Book.ToList());
+            return new ObservableCollection<Comics>(BdConnection.connection.Comics.ToList());
         }
-        public static Book GetBookInfo(int id)
+        public static Comics GetBookInfo(int id)
         {
-            Book selectedBook = BdConnection.connection.Book.Where(bookId => bookId.ID == id).FirstOrDefault();
-            Book book = new Book()
+            Comics selectedBook = BdConnection.connection.Comics.Where(bookId => bookId.ID == id).FirstOrDefault();
+            Comics book = new Comics()
             {
                 ID = selectedBook.ID,
                 Name = selectedBook.Name,
@@ -29,9 +29,9 @@ namespace Core.Functions
             };
             return book;
         }
-        public static ObservableCollection<Book> SearchBook(string name)
+        public static ObservableCollection<Comics> SearchBook(string name)
         {
-            return books = new ObservableCollection<Book>(BdConnection.connection.Book.Where(a => a.Name.Contains(name)).ToList());
+            return books = new ObservableCollection<Comics>(BdConnection.connection.Comics.Where(a => a.Name.Contains(name)).ToList());
         }
     }
 }
